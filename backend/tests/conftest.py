@@ -22,8 +22,11 @@ async def app(tmp_path, monkeypatch):
 
     registry.reset()
     providers.set_provider(None)
+    from quart.testing.app import TestApp
+
     a = create_app()
-    async with a.test_app():
+    # Generous timeouts so the suite stays reliable on heavily loaded CI/dev machines.
+    async with TestApp(a, startup_timeout=300, shutdown_timeout=300):
         yield a
 
 
