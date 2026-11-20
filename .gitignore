@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.db
+# Node
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+next-env.d.ts
+# Env & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+service-account*.json
+credentials*.json
+.DS_Store

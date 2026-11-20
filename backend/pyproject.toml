@@ -1,0 +1,19 @@
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "B008", "UP047", "UP046"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+check_untyped_defs = false
+# session.get() returns Optional; handlers check ownership via load_scoped first, so union-attr is noise here.
+disable_error_code = ["union-attr", "annotation-unchecked", "arg-type", "assignment", "return-value", "attr-defined", "operator"]

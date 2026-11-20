@@ -1,0 +1,13 @@
+quart==0.23.1
+quart-cors>=0.8
+SQLAlchemy[asyncio]==2.1.9
+aiosqlite==0.22.1
+asyncpg==0.32.0
+pydantic==2.14.4
+httpx==0.28.1
+dnspython==2.9.2
+firebase-admin>=6.5
+openai==3.57.0
+fpdf2==2.9.0
+hypercorn>=0.17
+email-validator>=2.1
