@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --panel-2: #f0f2f5; --border: #e2e5ea; --text: #15181d; --muted: #5d6573;
+  --accent: #2b5fd9; --accent-fg: #ffffff; --ok: #1d7a46; --warn: #a15c00; --bad: #c0352b; --info: #2b5fd9;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1115; --panel: #171a20; --panel-2: #1e222a; --border: #2a2f38; --text: #e8eaee; --muted: #9aa3b2;
+    --accent: #6d95ff; --accent-fg: #0b0d12; --ok: #4cc38a; --warn: #f0b45a; --bad: #ff7b72; --info: #6d95ff;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1115; --panel: #171a20; --panel-2: #1e222a; --border: #2a2f38; --text: #e8eaee; --muted: #9aa3b2;
+  --accent: #6d95ff; --accent-fg: #0b0d12; --ok: #4cc38a; --warn: #f0b45a; --bad: #ff7b72; --info: #6d95ff;
+}
+
+@theme inline {
+  --color-bg: var(--bg); --color-panel: var(--panel); --color-panel-2: var(--panel-2); --color-border: var(--border);
+  --color-text: var(--text); --color-muted: var(--muted); --color-accent: var(--accent); --color-accent-fg: var(--accent-fg);
+  --color-ok: var(--ok); --color-warn: var(--warn); --color-bad: var(--bad);
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html, body { background: var(--bg); color: var(--text); }
+body { font-family: var(--font-sans); font-feature-settings: "cv11", "ss01"; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+input, select, textarea { background: var(--panel); color: var(--text); }
